@@ -15,7 +15,6 @@ class Users extends Seeder
     $users = [
       [
         'id_role'           => '1',
-        'id_theme'          => '2',
         'name'              => 'Naufal Haidir Ridha',
         'username'          => 'admin',
         'phone'             => '08112448111',

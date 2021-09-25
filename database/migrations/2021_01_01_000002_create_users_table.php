@@ -9,7 +9,6 @@ class CreateUsersTable extends Migration {
     Schema::create('users', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('id_role')->unsigned();
-      $table->integer('id_theme')->unsigned();
       $table->string('photo_profile')->nullable();
       $table->string('name');
       $table->string('username')->unique();
@@ -25,7 +24,6 @@ class CreateUsersTable extends Migration {
       $table->integer('status')->default(1);
       $table->rememberToken();
       $table->foreign('id_role')->references('id')->on('roles')->onDelete('restrict')->onUpdate('restrict');
-      $table->foreign('id_theme')->references('id')->on('themes')->onDelete('restrict')->onUpdate('restrict');
       $table->timestamps();
     });
   }

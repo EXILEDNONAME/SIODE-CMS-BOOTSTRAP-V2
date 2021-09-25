@@ -46,6 +46,78 @@ class ThemeController extends Controller {
     return view($this->path . '.index', compact('model'));
   }
 
+  public function show($id) {
+    $model = $this->model;
+    if ( $id == 1 ) { $data = 'App\Models\Backend\Main\Section'::where('id_theme', 1)->get(); }
+    if ( $id == 2 ) { $data = 'App\Models\Backend\Main\Section'::where('id_theme', 2)->get(); }
+    if(request()->ajax()) {
+      return DataTables::of($data)
+      ->rawColumns(['description'])
+      ->addIndexColumn()
+      ->make(true);
+    }
+    return view($this->path . '.show', compact('data', 'model'));
+  }
+
+  public function section_index($id, $slug) {
+    $model = $this->model;
+
+    // THEME-1
+    if ( $id == 1 ) { $data = 'App\Models\Backend\Main\Section'::where('id_theme', 1)->get(); }
+
+    // THEME-2
+    if ( $id == 2 ) {
+      $datapath = 'pages.backend.main.theme-2.section';
+      if ( $slug == 'about' ) {
+        $data = 'App\Models\Backend\Main\SectionAbout'::where('id_theme', 2)->get();
+        $path = $datapath . '.about';
+        return view('pages.backend.main.theme-2.section.about.index', compact('data', 'model', 'path'));
+      }
+      if ( $slug == 'count' ) {
+        $data = 'App\Models\Backend\Main\SectionCount'::where('id_theme', 2)->get();
+        $path = $datapath . '.count';
+        return view('pages.backend.main.theme-2.section.count.index', compact('data', 'model', 'path'));
+      }
+      if ( $slug == 'client') {
+        $data = 'App\Models\Backend\Main\SectionClient'::where('id_theme', 2)->get();
+        $path = $datapath . 'client';
+        if(request()->ajax()) {
+          return DataTables::of($data)
+          ->rawColumns(['description'])
+          ->addIndexColumn()
+          ->make(true);
+        }
+        return view('pages.backend.main.theme-2.section.client.index', compact('data', 'model', 'path'));
+      }
+    }
+  }
+
+  public function section($id, $slug, $categories) {
+    if ( $slug == 'client') {
+      if ( $categories == 'create' ) {
+        $path = 'pages.backend.main.theme-2.section.client';
+        $model = 'App\Models\Backend\Main\SectionClient';
+        return view($path . '.create', compact('path', 'model'));
+      }
+      else if ( $categories == 'store' ) {
+        $store = $request->all();
+        $this->model::create($store);
+        return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
+      }
+      else {
+        $data = 'App\Models\Backend\Main\SectionClient'::where('id_theme', 2)->get();
+        $path = $datapath . 'client';
+        if(request()->ajax()) {
+          return DataTables::of($data)
+          ->rawColumns(['description'])
+          ->addIndexColumn()
+          ->make(true);
+        }
+        return view('pages.backend.main.theme-2.section.client.index', compact('data', 'model', 'path'));
+      }
+    }
+  }
+
   /**
   **************************************************
   * @return Enable

@@ -4,10 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThemes2CountsTable extends Migration {
+class CreateSectionCountsTable extends Migration {
   public function up() {
-    Schema::create('themes_2_counts', function (Blueprint $table) {
+    Schema::create('section_counts', function (Blueprint $table) {
       $table->increments('id');
+      $table->integer('id_theme')->unsigned();
       $table->string('context_1_title')->nullable();
       $table->string('context_2_title')->nullable();
       $table->string('context_3_title')->nullable();
@@ -21,11 +22,12 @@ class CreateThemes2CountsTable extends Migration {
       $table->integer('status')->default(1);
       $table->integer('created_by')->nullable()->default('0');
       $table->integer('updated_by')->nullable()->default('0');
+      $table->foreign('id_theme')->references('id')->on('themes')->onDelete('restrict')->onUpdate('restrict');
       $table->timestamps();
     });
   }
 
   public function down() {
-    Schema::dropIfExists('themes_2_counts');
+    Schema::dropIfExists('section_counts');
   }
 }
