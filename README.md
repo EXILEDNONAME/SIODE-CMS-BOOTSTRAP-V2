@@ -13,6 +13,7 @@ THEME 1 (OTHER)
 THEME 2 (BIZZLAND)
 - About
 - Client
+- Contact Us
 - Count
 - Pricing
 - Service

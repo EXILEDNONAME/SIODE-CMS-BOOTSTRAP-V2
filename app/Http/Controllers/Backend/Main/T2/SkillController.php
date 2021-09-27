@@ -20,9 +20,9 @@ class SkillController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/sections/skill';
-    $this->path = 'pages.backend.main.theme-2.section';
-    $this->model = 'App\Models\Backend\Main\T2\Skill';
+    $this->url = '/dashboard/themes-2/skill';
+    $this->path = 'pages.backend.main.theme.t2.section.skill';
+    $this->model = 'App\Models\Backend\Main\SectionSkill';
     $this->data = $this->model::get();
   }
 
@@ -33,31 +33,22 @@ class SkillController extends Controller {
   **/
 
   public function index() {
-    if ( Auth::User()->id_theme == 1 ) {
-      $data = $this->model::first();
-      $path = $this->path . '.about';
-      return view($this->path . '.skill.index', compact('data', 'path'));
-    }
-    else { return redirect('dashboard/sections'); }
+    $data = $this->model::first();
+    $path = $this->path;
+    return view($this->path . '.index', compact('data', 'path'));
   }
 
   public function store(Request $request) {
-    if ( Auth::User()->id_theme == 1 ) {
-      $store = $request->all();
-      $this->model::create($store);
-      return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
-    }
-    else { return redirect('dashboard/sections'); }
+    $store = $request->all();
+    $this->model::create($store);
+    return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
   public function update(Request $request) {
-    if ( Auth::User()->id_theme == 1 ) {
-      $data = $this->model::first();
-      $update = $request->all();
-      $data->update($update);
-      return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
-    }
-    else { return redirect('dashboard/sections'); }
+    $data = $this->model::first();
+    $update = $request->all();
+    $data->update($update);
+    return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
   }
 
 }

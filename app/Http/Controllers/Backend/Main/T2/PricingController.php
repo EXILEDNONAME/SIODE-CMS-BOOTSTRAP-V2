@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
-use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
-
 class PricingController extends Controller {
 
   /**
@@ -22,13 +19,11 @@ class PricingController extends Controller {
   **/
 
   public function __construct() {
-
     $this->middleware('auth');
-    $this->url = '/dashboard/sections/pricing';
-    $this->path = 'pages.backend.main.theme-2.section.pricing';
-    $this->model = 'App\Models\Backend\Main\T2\Pricing';
+    $this->url = '/dashboard/themes-2/pricing';
+    $this->path = 'pages.backend.main.theme.t2.section.pricing';
+    $this->model = 'App\Models\Backend\Main\SectionPricing';
     $this->data = $this->model::get();
-
   }
 
   /**
@@ -78,7 +73,7 @@ class PricingController extends Controller {
   **************************************************
   **/
 
-  public function store(StoreRequest $request) {
+  public function store(Request $request) {
     $store = $request->all();
     $this->model::create($store);
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
@@ -103,7 +98,7 @@ class PricingController extends Controller {
   **************************************************
   **/
 
-  public function update(UpdateRequest $request, $id) {
+  public function update(Request $request, $id) {
     $data = $this->model::findOrFail($id);
     $update = $request->all();
     $data->update($update);

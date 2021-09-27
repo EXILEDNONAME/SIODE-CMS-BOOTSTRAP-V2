@@ -23,7 +23,7 @@
 <form method="POST" id="form-exilednoname" action="{{ URL::current() }}//store" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
   {{ csrf_field() }}
 
-    <input class="form-control" name="id_theme" type="hidden" value="2">
+  <input class="form-control" name="id_theme" type="hidden" value="2">
   <input class="form-control" name="created_by" type="hidden" value="{{ Auth::User()->id }}">
   @include($path . '.form', ['formMode' => 'create'])
 </form>

@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\Main\Theme\StoreRequest;
-use App\Http\Requests\Backend\Main\Theme\UpdateRequest;
-
 class CountController extends Controller {
 
   /**
@@ -22,14 +19,11 @@ class CountController extends Controller {
   **/
 
   public function __construct() {
-    $this->url = '/dashboard/sections/count';
     $this->middleware('auth');
-
-    if ( $this->middleware(['auth', 't2'])) {
-      $this->path = 'pages.backend.main.theme-2.section.count';
-      $this->model = 'App\Models\Backend\Main\T2\Count';
-      $this->data = $this->model::get();
-    }
+    $this->url = '/dashboard/themes-2/count';
+    $this->path = 'pages.backend.main.theme.t2.section.count';
+    $this->model = 'App\Models\Backend\Main\SectionCount';
+    $this->data = $this->model::get();
   }
 
   /**

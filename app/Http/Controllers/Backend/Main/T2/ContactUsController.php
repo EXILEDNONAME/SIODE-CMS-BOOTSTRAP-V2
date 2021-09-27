@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
-use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
-
 class ContactUsController extends Controller {
 
   /**
@@ -22,14 +19,11 @@ class ContactUsController extends Controller {
   **/
 
   public function __construct() {
-    $this->url = '/dashboard/sections/contact-us';
     $this->middleware('auth');
-
-    if ( $this->middleware(['auth', 't2'])) {
-      $this->path = 'pages.backend.main.theme-2.section.contact-us';
-      $this->model = 'App\Models\Backend\Main\T2\ContactUs';
-      $this->data = $this->model::get();
-    }
+    $this->url = '/dashboard/themes-2/contact-us';
+    $this->path = 'pages.backend.main.theme.t2.section.contact-us';
+    $this->model = 'App\Models\Backend\Main\SectionContactUs';
+    $this->data = $this->model::get();
   }
 
   /**

@@ -20,12 +20,10 @@ Route::group([
   Route::post('update', 'AboutController@update')->name('update');
 });
 
-
-
 // SECTION - CLIENTS
 Route::group([
-  'as' => 'system.main.t2.client.',
-  'prefix' => 'dashboard/sections/client',
+  'as' => 'main.themes.t2.client.',
+  'prefix' => 'dashboard/themes-2/client',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'ClientController@status_done')->name('status-done');
@@ -38,10 +36,21 @@ Route::group([
   Route::resource('/', 'ClientController')->parameters(['' => 'id']);
 });
 
-// SECTION - COUNT
+// SECTION - CONTACT-US
 Route::group([
-  'as' => 'system.main.t2.count.',
-  'prefix' => 'dashboard/sections/count',
+  'as' => 'main.themes.t2.contact-us.',
+  'prefix' => 'dashboard/themes-2/contact-us',
+  'namespace' => 'Backend\Main\T2',
+], function(){
+  Route::get('/', 'ContactUsController@index')->name('index');
+  Route::post('store', 'ContactUsController@store')->name('store');
+  Route::post('update', 'ContactUsController@update')->name('update');
+});
+
+// THEMES 2 - COUNT
+Route::group([
+  'as' => 'main.themes.t2.count.',
+  'prefix' => 'dashboard/themes-2/count',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('/', 'CountController@index')->name('index');
@@ -49,10 +58,10 @@ Route::group([
   Route::post('update', 'CountController@update')->name('update');
 });
 
-// SECTION - PRICINGS
+// SECTION - PRICING
 Route::group([
-  'as' => 'system.main.t2.pricing.',
-  'prefix' => 'dashboard/sections/pricing',
+  'as' => 'main.themes.t2.pricing.',
+  'prefix' => 'dashboard/themes-2/pricing',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'PricingController@status_done')->name('status-done');
@@ -69,10 +78,10 @@ Route::group([
   Route::resource('/', 'PricingController')->parameters(['' => 'id']);
 });
 
-// SECTION - SERVICES
+// SECTION - SERVICE
 Route::group([
-  'as' => 'system.main.t2.service.',
-  'prefix' => 'dashboard/sections/service',
+  'as' => 'main.themes.t2.service.',
+  'prefix' => 'dashboard/themes-2/service',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'ServiceController@status_done')->name('status-done');
@@ -87,8 +96,8 @@ Route::group([
 
 // SECTION - SKILL
 Route::group([
-  'as' => 'system.main.t2.skill.',
-  'prefix' => 'dashboard/sections/skill',
+  'as' => 'main.themes.t2.skill.',
+  'prefix' => 'dashboard/themes-2/skill',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('/', 'SkillController@index')->name('index');
@@ -98,8 +107,8 @@ Route::group([
 
 // SECTION - TEAM
 Route::group([
-  'as' => 'system.main.t2.team.',
-  'prefix' => 'dashboard/sections/team',
+  'as' => 'main.themes.t2.team.',
+  'prefix' => 'dashboard/themes-2/team',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'TeamController@status_done')->name('status-done');
@@ -114,8 +123,8 @@ Route::group([
 
 // SECTION - TESTIMONIALS
 Route::group([
-  'as' => 'system.main.t2.testimonial.',
-  'prefix' => 'dashboard/sections/testimonial',
+  'as' => 'main.themes.t2.testimonial.',
+  'prefix' => 'dashboard/themes-2/testimonial',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('status-done/{id}', 'TestimonialController@status_done')->name('status-done');
@@ -126,15 +135,4 @@ Route::group([
   Route::get('delete/{id}', 'TestimonialController@delete')->name('delete');
   Route::get('deleteall', 'TestimonialController@deleteall')->name('deleteall');
   Route::resource('/', 'TestimonialController')->parameters(['' => 'id']);
-});
-
-// SECTION - CONTACT-US
-Route::group([
-  'as' => 'system.main.t2.contact-us.',
-  'prefix' => 'dashboard/sections/contact-us',
-  'namespace' => 'Backend\Main\T2',
-], function(){
-  Route::get('/', 'ContactUsController@index')->name('index');
-  Route::post('store', 'ContactUsController@store')->name('store');
-  Route::post('update', 'ContactUsController@update')->name('update');
 });

@@ -9,9 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\Main\Theme\StoreRequest;
-use App\Http\Requests\Backend\Main\Theme\UpdateRequest;
-
 class AboutController extends Controller {
 
   /**
@@ -22,11 +19,11 @@ class AboutController extends Controller {
   **/
 
   public function __construct() {
-    $this->url = '/dashboard/themes-2/about';
     $this->middleware('auth');
-      $this->path = 'pages.backend.main.theme.t2.section';
-      $this->model = 'App\Models\Backend\Main\SectionAbout';
-      $this->data = $this->model::get();
+    $this->url = '/dashboard/themes-2/about';
+    $this->path = 'pages.backend.main.theme.t2.section.about';
+    $this->model = 'App\Models\Backend\Main\SectionAbout';
+    $this->data = $this->model::get();
   }
 
   /**
@@ -38,7 +35,7 @@ class AboutController extends Controller {
   public function index() {
     $data = $this->model::first();
     $path = $this->path . '.about';
-    return view($this->path . '.about.index', compact('data', 'path'));
+    return view($this->path . '.index', compact('data', 'path'));
   }
 
   public function store(Request $request) {
