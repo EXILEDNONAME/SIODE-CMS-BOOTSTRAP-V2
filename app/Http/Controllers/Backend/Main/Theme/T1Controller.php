@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main;
+namespace App\Http\Controllers\Backend\Main\Theme;
 
 use Auth;
 use DataTables;
@@ -12,7 +12,7 @@ use Spatie\Activitylog\Models\Activity;
 use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
 use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
 
-class SectionController extends Controller {
+class T1Controller extends Controller {
 
   /**
   **************************************************
@@ -22,13 +22,11 @@ class SectionController extends Controller {
   **/
 
   public function __construct() {
-
     $this->middleware('auth');
-    $this->url = '/dashboard/sections';
-    $this->path = 'pages.backend.main';
+    $this->url = '/dashboard/themes/other';
+    $this->path = 'pages.backend.main.theme.other';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::get();
-
+    $this->data = $this->model::where('id_theme', 1)->get();
   }
 
   /**
@@ -46,7 +44,7 @@ class SectionController extends Controller {
       ->addIndexColumn()
       ->make(true);
     }
-    return view($this->path . '.section.index', compact('model'));
+    return view($this->path . '.index', compact('model'));
   }
 
   /**

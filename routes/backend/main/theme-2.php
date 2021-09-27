@@ -1,26 +1,26 @@
 <?php
 
-// SECTION - GENERAL
+// THEMES 2
 Route::group([
-  'as' => 'system.main.t2.general.',
-  'prefix' => 'dashboard/sections/general',
-  'namespace' => 'Backend\Main\T2',
+  'as' => 'main.themes.t2.',
+  'prefix' => 'dashboard/themes-2',
+  'namespace' => 'Backend\Main\Theme',
 ], function(){
-  Route::get('/', 'GeneralController@index')->name('index');
-  Route::post('store', 'GeneralController@store')->name('store');
-  Route::post('update', 'GeneralController@update')->name('update');
+  Route::get('/', 'T2Controller@index')->name('index');
 });
 
-// SECTION - ABOUT
+// THEMES 2 - ABOUT
 Route::group([
-  'as' => 'system.main.t2.about.',
-  'prefix' => 'dashboard/sections/about',
+  'as' => 'main.themes.t2.about.',
+  'prefix' => 'dashboard/themes-2/about',
   'namespace' => 'Backend\Main\T2',
 ], function(){
   Route::get('/', 'AboutController@index')->name('index');
   Route::post('store', 'AboutController@store')->name('store');
   Route::post('update', 'AboutController@update')->name('update');
 });
+
+
 
 // SECTION - CLIENTS
 Route::group([

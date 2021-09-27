@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main;
+namespace App\Http\Controllers\Backend\Main\Theme;
 
 use Auth;
 use DataTables;
@@ -12,7 +12,7 @@ use Spatie\Activitylog\Models\Activity;
 use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
 use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
 
-class SectionController extends Controller {
+class T2Controller extends Controller {
 
   /**
   **************************************************
@@ -22,13 +22,13 @@ class SectionController extends Controller {
   **/
 
   public function __construct() {
-
     $this->middleware('auth');
-    $this->url = '/dashboard/sections';
-    $this->path = 'pages.backend.main';
+    $this->url = '/dashboard/themes-2';
+    $this->path = 'pages.backend.main.theme.t2';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::get();
+    $this->data = $this->model::where('id_theme', 2)->get();
 
+    $this->modelSectionAbout = 'App\Models\Backend\Main\SectionAbout';
   }
 
   /**
@@ -46,7 +46,7 @@ class SectionController extends Controller {
       ->addIndexColumn()
       ->make(true);
     }
-    return view($this->path . '.section.index', compact('model'));
+    return view($this->path . '.index', compact('model'));
   }
 
   /**
@@ -56,9 +56,13 @@ class SectionController extends Controller {
   **/
 
   public function show($id) {
-    $model = $this->model;
-    $data = $this->model::findOrFail($id);
-    return view($this->path . '.show', compact('data', 'model'));
+    if ( $id == 1 ) {
+      $data = $this->modelSectionAbout::first();
+      $model = $data;
+      $path = $this->path . '.section.about';
+      return view($this->path . '.section.about.index', compact('data', 'model', 'path'));
+    }
+
   }
 
   /**
@@ -79,10 +83,12 @@ class SectionController extends Controller {
   **************************************************
   **/
 
-  public function store(StoreRequest $request) {
+  public function store(Request $request) {
     $store = $request->all();
-    $this->model::create($store);
-    return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
+    $model = 'App\Models\Backend\Main\SectionAbout';
+    $model::create($store);
+
+    return redirect($this->url. '/1')->with('success', trans('default.notification.success.item-created'));
   }
 
   /**
@@ -93,8 +99,8 @@ class SectionController extends Controller {
 
   public function edit($id) {
     $path = $this->path . '.theme-2.section.about';
-    $model = $this->model;
-    $data = $this->model::findOrFail($id);
+    $model = 'App\Models\Backend\Main\SectionAbout';
+    $data = $model::first($id);
     return view($this->path . '.theme-2.section.about.index', compact('path', 'data', 'model'));
   }
 
@@ -105,7 +111,8 @@ class SectionController extends Controller {
   **/
 
   public function update(UpdateRequest $request, $id) {
-    $data = $this->model::findOrFail($id);
+    $model = 'App\Models\Backend\Main\SectionAbout';
+    $data = $model::first($id);
     $update = $request->all();
     $data->update($update);
     return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));

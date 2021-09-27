@@ -14,7 +14,6 @@ Route::get('/lang/{language}', 'LocalizationController@switch')->name('localizat
 
 // MAIN
 require __DIR__.'/backend/main/theme-2.php';
-require __DIR__.'/backend/main/theme.php';
 require __DIR__.'/backend/main/configuration/about.php';
 
 // SYSTEM
@@ -22,3 +21,7 @@ require __DIR__.'/backend/system/configuration.php';
 require __DIR__.'/backend/system/general.php';
 require __DIR__.'/backend/system/dummy.php';
 require __DIR__.'/backend/system/management.php';
+
+// THEMES
+require __DIR__.'/backend/main/theme-1.php';
+require __DIR__.'/backend/main/theme-other.php';
