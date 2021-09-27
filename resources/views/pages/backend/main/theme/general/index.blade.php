@@ -1,5 +1,5 @@
-@extends('layouts.backend.system.index_non-editable-theme-show')
-@push('title', 'Section Skill')
+@extends('layouts.backend.system.edit')
+@push('title', 'Section Contact Us')
 
 @push('content-body')
 
@@ -26,7 +26,6 @@
   <input class="form-control" name="created_by" type="hidden" value="{{ Auth::User()->id }}">
   @include($path . '.form', ['formMode' => 'create'])
 </form>
-
 @endif
 
 @endpush

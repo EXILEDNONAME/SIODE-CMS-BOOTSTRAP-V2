@@ -24,16 +24,16 @@ class GlobalController extends Controller {
     $this->url = '/dashboard/configuration';
     $this->path = 'pages.frontend';
     $this->theme = 'App\Models\Backend\Main\Theme';
-    $this->modelGeneral = 'App\Models\Backend\System\ConfigurationGeneral';
-    $this->modelSectionAbout = 'App\Models\Backend\Main\T2\About';
-    $this->modelSectionClient = 'App\Models\Backend\Main\T2\Client';
-    $this->modelSectionCount = 'App\Models\Backend\Main\T2\Count';
-    $this->modelSectionPricing = 'App\Models\Backend\Main\T2\Pricing';
-    $this->modelSectionService = 'App\Models\Backend\Main\T2\Service';
-    $this->modelSectionTeam = 'App\Models\Backend\Main\T2\Team';
-    $this->modelSectionTestimonial = 'App\Models\Backend\Main\T2\Testimonial';
-    $this->modelSectionContactUs = 'App\Models\Backend\Main\T2\ContactUs';
-    $this->modelSectionFeature = 'App\Models\Backend\Main\T2\Feature';
+    $this->modelSectionGeneral = 'App\Models\Backend\Main\SectionGeneral';
+    $this->modelSectionAbout = 'App\Models\Backend\Main\SectionAbout';
+    $this->modelSectionClient = 'App\Models\Backend\Main\SectionClient';
+    $this->modelSectionCount = 'App\Models\Backend\Main\SectionCount';
+    $this->modelSectionPricing = 'App\Models\Backend\Main\SectionPricing';
+    $this->modelSectionService = 'App\Models\Backend\Main\SectionService';
+    $this->modelSectionTeam = 'App\Models\Backend\Main\SectionTeam';
+    $this->modelSectionTestimonial = 'App\Models\Backend\Main\SectionTestimonial';
+    $this->modelSectionContactUs = 'App\Models\Backend\Main\SectionContactUs';
+    $this->modelSectionFeature = 'App\Models\Backend\Main\SectionFeature';
   }
 
   /**
@@ -47,7 +47,7 @@ class GlobalController extends Controller {
     $theme = $this->theme::where('active', 1)->first();
 
     if (!empty($theme->id) && $theme->id == 2 ) {
-      $general = $this->modelGeneral::first();
+      $general = $this->modelSectionGeneral::first();
       $about = $this->modelSectionAbout::first();
       $client = $this->modelSectionClient::where('active', 1)->get();
       $count = $this->modelSectionCount::first();
@@ -56,8 +56,7 @@ class GlobalController extends Controller {
       $team = $this->modelSectionTeam::where('active', 1)->get();
       $testimonial = $this->modelSectionTestimonial::get();
       $contactus = $this->modelSectionContactUs::first();
-      $feature = $this->modelSectionFeature::first();
-      return view($this->path . '.theme.bizland.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus', 'feature'))->render();
+      return view($this->path . '.theme.bizland.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus'))->render();
     }
 
     else if (!empty($theme->id) && $theme->id == 3 ) {

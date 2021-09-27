@@ -51,94 +51,8 @@ class T2Controller extends Controller {
 
   /**
   **************************************************
-  * @return Show
-  **************************************************
-  **/
-
-  public function show($id) {
-    if ( $id == 1 ) {
-      $data = $this->modelSectionAbout::first();
-      $model = $data;
-      $path = $this->path . '.section.about';
-      return view($this->path . '.section.about.index', compact('data', 'model', 'path'));
-    }
-
-  }
-
-  /**
-  **************************************************
-  * @return Create
-  **************************************************
-  **/
-
-  public function create() {
-    $path = $this->path;
-    $model = $this->model;
-    return view($this->path . '.create', compact('path', 'model'));
-  }
-
-  /**
-  **************************************************
-  * @return Store
-  **************************************************
-  **/
-
-  public function store(Request $request) {
-    $store = $request->all();
-    $model = 'App\Models\Backend\Main\SectionAbout';
-    $model::create($store);
-
-    return redirect($this->url. '/1')->with('success', trans('default.notification.success.item-created'));
-  }
-
-  /**
-  **************************************************
-  * @return Edit
-  **************************************************
-  **/
-
-  public function edit($id) {
-    $path = $this->path . '.theme-2.section.about';
-    $model = 'App\Models\Backend\Main\SectionAbout';
-    $data = $model::first($id);
-    return view($this->path . '.theme-2.section.about.index', compact('path', 'data', 'model'));
-  }
-
-  /**
-  **************************************************
-  * @return Update
-  **************************************************
-  **/
-
-  public function update(UpdateRequest $request, $id) {
-    $model = 'App\Models\Backend\Main\SectionAbout';
-    $data = $model::first($id);
-    $update = $request->all();
-    $data->update($update);
-    return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
-  }
-
-  /**
-  **************************************************
-  * @return Destroy
-  **************************************************
-  **/
-
-  public function destroy($id) {
-    try {
-      $this->model::destroy($id);
-      return redirect($this->url)->with('success', trans('default.notification.success.item-deleted'));
-    } catch (\Exception $e) {
-      return redirect($this->url)->with('error', trans('default.notification.error'));
-    }
-  }
-
-  /**
-  **************************************************
   * @return Enable
   * @return Disable
-  * @return Status-Done
-  * @return Status-Pending
   **************************************************
   **/
 
@@ -150,40 +64,6 @@ class T2Controller extends Controller {
   public function disable($id) {
     $data = $this->model::where('id', $id)->update([ 'active' => 2 ]);
     return Response::json($data);
-  }
-
-  public function status_done($id) {
-    $data = $this->model::where('id', $id)->update([ 'status' => 1 ]);
-    return Response::json($data);
-  }
-
-  public function status_pending($id) {
-    $data = $this->model::where('id', $id)->update([ 'status' => 2 ]);
-    return Response::json($data);
-  }
-
-  /**
-  **************************************************
-  * @return Delete
-  **************************************************
-  **/
-
-  public function delete($id) {
-    $this->model::destroy($id);
-    $data = $this->model::where('id',$id)->delete();
-    return Response::json($data);
-  }
-
-  /**
-  **************************************************
-  * @return Delete-All
-  **************************************************
-  **/
-
-  public function deleteall(Request $request) {
-    $exilednoname = $request->EXILEDNONAME;
-    $this->model::whereIn('id',explode(",",$exilednoname))->delete();
-    return Response::json($exilednoname);
   }
 
 }

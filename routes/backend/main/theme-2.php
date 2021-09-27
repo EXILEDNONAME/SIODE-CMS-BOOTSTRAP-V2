@@ -6,6 +6,8 @@ Route::group([
   'prefix' => 'dashboard/themes-2',
   'namespace' => 'Backend\Main\Theme',
 ], function(){
+  Route::get('enable/{id}', 'T2Controller@enable')->name('enable');
+  Route::get('disable/{id}', 'T2Controller@disable')->name('disable');
   Route::get('/', 'T2Controller@index')->name('index');
 });
 
@@ -56,6 +58,17 @@ Route::group([
   Route::get('/', 'CountController@index')->name('index');
   Route::post('store', 'CountController@store')->name('store');
   Route::post('update', 'CountController@update')->name('update');
+});
+
+// THEMES 2 - GENERAL
+Route::group([
+  'as' => 'main.themes.t2.general.',
+  'prefix' => 'dashboard/themes-2/general',
+  'namespace' => 'Backend\Main\T2',
+], function(){
+  Route::get('/', 'GeneralController@index')->name('index');
+  Route::post('store', 'GeneralController@store')->name('store');
+  Route::post('update', 'GeneralController@update')->name('update');
 });
 
 // SECTION - PRICING

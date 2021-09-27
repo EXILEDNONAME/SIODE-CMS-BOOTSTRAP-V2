@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class SkillController extends Controller {
+class GeneralController extends Controller {
 
   /**
   **************************************************
@@ -20,23 +20,22 @@ class SkillController extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/themes-2/skill';
-    $this->path = 'pages.backend.main.theme.t2.section.skill';
-    $this->model = 'App\Models\Backend\Main\SectionSkill';
+    $this->url = '/dashboard/themes-2/general';
+    $this->path = 'pages.backend.main.theme.general';
+    $this->model = 'App\Models\Backend\Main\SectionGeneral';
     $this->data = $this->model::get();
   }
 
   /**
   **************************************************
-  * @return SECTION-SKILL
+  * @return SECTION-COUNT
   **************************************************
   **/
 
   public function index() {
     $data = $this->model::first();
-    $model = $this->model;
     $path = $this->path;
-    return view($this->path . '.index', compact('data', 'model', 'path'));
+    return view($this->path . '.index', compact('data', 'path'));
   }
 
   public function store(Request $request) {

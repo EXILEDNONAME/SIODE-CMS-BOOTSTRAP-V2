@@ -102,7 +102,7 @@
           <div class="col-lg-6 col-md-6 footer-contact">
             <h3> {{ isset($general->name) ? $general->name : '-' }} <span>.</span></h3>
             <p>
-              {{ isset($general->address) ? $general->address : '-' }}
+              {{ isset($general->address) ? $general->address : '-' }} <br>
               <strong>Phone:</strong> {{ isset($general->phone) ? $general->phone : '-' }} <br>
               <strong>Email:</strong> {{ isset($general->email) ? $general->email : '-' }}<br>
             </p>
@@ -123,9 +123,9 @@
             <h4> Our Social Networks </h4>
             <p> Follow Us </p>
             <div class="social-links mt-3">
-              <a href="{{ isset($general->social_twitter) ? $general->social_twitter : '-' }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="{{ isset($general->social_facebook) ? $general->social_facebook : '-' }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="{{ isset($general->social_instagram) ? $general->social_instagram : '-' }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="{{ isset($general->social_twitter) ? $general->social_twitter : '#' }}" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="{{ isset($general->social_facebook) ? $general->social_facebook : '#' }}" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="{{ isset($general->social_instagram) ? $general->social_instagram : '#' }}" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 
