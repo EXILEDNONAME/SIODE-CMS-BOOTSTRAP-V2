@@ -25,7 +25,7 @@ class GlobalController extends Controller {
     $this->path = 'pages.frontend';
     $this->theme = 'App\Models\Backend\Main\Theme';
     $this->section = 'App\Models\Backend\Main\Section';
-    $this->modelSectionGeneral = 'App\Models\Backend\Main\SectionGeneral';
+    $this->general = 'App\Models\Backend\Main\General';
     $this->modelSectionAbout = 'App\Models\Backend\Main\SectionAbout';
     $this->modelSectionClient = 'App\Models\Backend\Main\SectionClient';
     $this->modelSectionCount = 'App\Models\Backend\Main\SectionCount';
@@ -50,7 +50,7 @@ class GlobalController extends Controller {
     if (!empty($theme->id) && $theme->id == 2 ) {
       $section_main = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
       $section_menu = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
-      $general = $this->modelSectionGeneral::first();
+      $general = $this->general::first();
       $about = $this->modelSectionAbout::first();
       $client = $this->modelSectionClient::where('active', 1)->get();
       $count = $this->modelSectionCount::first();

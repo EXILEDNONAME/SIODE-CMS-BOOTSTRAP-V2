@@ -1,5 +1,5 @@
 @extends('layouts.backend.system.index_non-editable-theme-index')
-@push('title', 'Sections')
+@push('title', 'T1 Sections')
 
 @push('content-head')
 <th> Theme </th>

@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSectionGeneralsTable extends Migration {
+class CreateGeneralsTable extends Migration {
   public function up() {
-    Schema::create('section_generals', function (Blueprint $table) {
+    Schema::create('generals', function (Blueprint $table) {
       $table->increments('id');
       $table->string('name');
       $table->string('slogan')->nullable();
@@ -26,6 +26,6 @@ class CreateSectionGeneralsTable extends Migration {
   }
 
   public function down() {
-    Schema::dropIfExists('section_generals');
+    Schema::dropIfExists('generals');
   }
 }

@@ -25,9 +25,9 @@
         <i class="icofont-phone"></i> {{ isset($general->phone) ? $general->phone : '-' }}
       </div>
       <div class="social-links">
-        <a href="{{ isset($general->social_twitter) ? $general->social_twitter : '-' }}" class="twitter"><i class="icofont-twitter"></i></a>
-        <a href="{{ isset($general->social_facebook) ? $general->social_facebook : '-' }}" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="{{ isset($general->social_instagram) ? $general->social_instagram : '-' }}" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="https://twitter.com/{{ isset($general->social_twitter) ? $general->social_twitter : '-' }}" target="_blank" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="https://www.facebook.com/{{ isset($general->social_facebook) ? $general->social_facebook : '-' }}" target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/{{ isset($general->social_instagram) ? $general->social_instagram : '-' }}" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -152,9 +152,9 @@
             <h4> Our Social Networks </h4>
             <p> Follow Us </p>
             <div class="social-links mt-3">
-              <a href="{{ isset($general->social_twitter) ? $general->social_twitter : '#' }}" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="{{ isset($general->social_facebook) ? $general->social_facebook : '#' }}" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="{{ isset($general->social_instagram) ? $general->social_instagram : '#' }}" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://twitter.com/{{ isset($general->social_twitter) ? $general->social_twitter : '#' }}" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://www.facebook.com/{{ isset($general->social_facebook) ? $general->social_facebook : '#' }}" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/{{ isset($general->social_instagram) ? $general->social_instagram : '#' }}" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 

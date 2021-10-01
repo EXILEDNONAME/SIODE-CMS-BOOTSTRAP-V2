@@ -2,7 +2,7 @@
 
 // THEMES - 1
 Route::group([
-  'as' => 'main.themes.other.',
+  'as' => 'main.themes.t1.',
   'prefix' => 'dashboard/themes-1',
   'namespace' => 'Backend\Main\Theme',
 ], function(){

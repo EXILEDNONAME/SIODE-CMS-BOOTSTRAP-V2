@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-class T2Controller extends Controller {
+class T3Controller extends Controller {
 
   /**
   **************************************************
@@ -20,10 +20,10 @@ class T2Controller extends Controller {
 
   public function __construct() {
     $this->middleware('auth');
-    $this->url = '/dashboard/themes-2';
-    $this->path = 'pages.backend.main.theme.t2';
+    $this->url = '/dashboard/themes-3';
+    $this->path = 'pages.backend.main.theme.t3';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::where('id_theme', 2)->get();
+    $this->data = $this->model::where('id_theme', 3)->get();
   }
 
   /**
