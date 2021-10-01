@@ -34,7 +34,7 @@ class AboutController extends Controller {
 
   public function index() {
     $data = $this->model::first();
-    $path = $this->path . '.about';
+    $path = $this->path;
     return view($this->path . '.index', compact('data', 'path'));
   }
 

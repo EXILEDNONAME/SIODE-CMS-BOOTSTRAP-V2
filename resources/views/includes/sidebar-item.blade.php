@@ -19,16 +19,16 @@
   <div class="menu-submenu">
     <i class="menu-arrow"></i>
     <ul class="menu-subnav">
-      <li class="menu-item {{ (request()->is('dashboard/themes/1*')) ? 'menu-item-active' : '' }}">
-        <a href="/dashboard/themes/1" class="menu-link">
+      <li class="menu-item {{ (request()->is('dashboard/themes-1*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/themes-1" class="menu-link">
           <i class="menu-bullet menu-bullet-line"><span></span></i>
-          <span class="menu-text"> Other </span>
+          <span class="menu-text"> Themes 1 </span>
         </a>
       </li>
-        <li class="menu-item {{ (request()->is('dashboard/themes/2*')) ? 'menu-item-active' : '' }}">
-        <a href="/dashboard/themes/2" class="menu-link">
+      <li class="menu-item {{ (request()->is('dashboard/themes-2*')) ? 'menu-item-active' : '' }}">
+        <a href="/dashboard/themes-2" class="menu-link">
           <i class="menu-bullet menu-bullet-line"><span></span></i>
-          <span class="menu-text"> Bizland </span>
+          <span class="menu-text"> Themes 2 </span>
         </a>
       </li>
     </ul>

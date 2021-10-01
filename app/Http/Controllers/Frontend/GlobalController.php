@@ -24,6 +24,7 @@ class GlobalController extends Controller {
     $this->url = '/dashboard/configuration';
     $this->path = 'pages.frontend';
     $this->theme = 'App\Models\Backend\Main\Theme';
+    $this->section = 'App\Models\Backend\Main\Section';
     $this->modelSectionGeneral = 'App\Models\Backend\Main\SectionGeneral';
     $this->modelSectionAbout = 'App\Models\Backend\Main\SectionAbout';
     $this->modelSectionClient = 'App\Models\Backend\Main\SectionClient';
@@ -47,6 +48,8 @@ class GlobalController extends Controller {
     $theme = $this->theme::where('active', 1)->first();
 
     if (!empty($theme->id) && $theme->id == 2 ) {
+      $section_main = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
+      $section_menu = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
       $general = $this->modelSectionGeneral::first();
       $about = $this->modelSectionAbout::first();
       $client = $this->modelSectionClient::where('active', 1)->get();
@@ -56,7 +59,7 @@ class GlobalController extends Controller {
       $team = $this->modelSectionTeam::where('active', 1)->get();
       $testimonial = $this->modelSectionTestimonial::get();
       $contactus = $this->modelSectionContactUs::first();
-      return view($this->path . '.theme.bizland.index', compact('general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus'))->render();
+      return view($this->path . '.theme.t2.index', compact('section_main', 'section_menu', 'general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus'))->render();
     }
 
     else if (!empty($theme->id) && $theme->id == 3 ) {

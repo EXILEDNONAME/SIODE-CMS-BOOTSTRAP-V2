@@ -27,8 +27,6 @@ class T2Controller extends Controller {
     $this->path = 'pages.backend.main.theme.t2';
     $this->model = 'App\Models\Backend\Main\Section';
     $this->data = $this->model::where('id_theme', 2)->get();
-
-    $this->modelSectionAbout = 'App\Models\Backend\Main\SectionAbout';
   }
 
   /**

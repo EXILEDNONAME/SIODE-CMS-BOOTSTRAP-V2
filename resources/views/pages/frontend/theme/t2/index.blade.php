@@ -6,15 +6,15 @@
   <title> {{ isset($general->name) ? $general->name : '-' }} </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-  <link href="/assets/frontend/bizland/img/favicon.png" rel="icon">
-  <link href="/assets/frontend/bizland/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <link href="/assets/frontend/bizland/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/assets/frontend/bizland/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="/assets/frontend/bizland/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/assets/frontend/bizland/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="/assets/frontend/bizland/vendor/venobox/venobox.css" rel="stylesheet">
-  <link href="/assets/frontend/bizland/vendor/aos/aos.css" rel="stylesheet">
-  <link href="/assets/frontend/bizland/css/style.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/img/favicon.png" rel="icon">
+  <link href="/assets/frontend/t2/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/assets/frontend/t2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/frontend/t2/css/style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -38,17 +38,18 @@
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="/">Home</a></li>
-          <li><a href="#about"> About </a></li>
-          <li><a href="#counts"> Counts </a></li>
-          <li><a href="#team"> Team </a></li>
-          <li><a href="#clients"> Clients </a></li>
-          <li><a href="#testimonials"> Testimonials </a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#features">Features</a></li>
-          <!--
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>-->
+
+          @foreach($section_menu as $section)
+          @if ($section->url == 'about') <li><a href="#about"> About </a></li> @endif
+          @if ($section->url == 'count') <li><a href="#counts"> Counts </a></li> @endif
+          @if ($section->url == 'team') <li><a href="#team"> Team </a></li> @endif
+          @if ($section->url == 'client') <li><a href="#clients"> Clients </a></li> @endif
+          @if ($section->url == 'testimonial') <li><a href="#testimonials"> Testimonials </a></li> @endif
+          @if ($section->url == 'service') <li><a href="#services">Services</a></li> @endif
+          @if ($section->url == 'pricing') <li><a href="#pricing">Pricing</a></li> @endif
+          @if ($section->url == 'feature') <li><a href="#features">Features</a></li> @endif
+          @endforeach
+
         </ul>
       </nav>
     </div>
@@ -66,18 +67,46 @@
   </section>
 
   <main id="main">
-    @include('pages.frontend.theme.bizland.partial.counts')
-    @include('pages.frontend.theme.bizland.partial.about')
-    @include('pages.frontend.theme.bizland.partial.team')
-    @include('pages.frontend.theme.bizland.partial.testimonials')
-    @include('pages.frontend.theme.bizland.partial.clients')
-    <!-- @include('pages.frontend.theme.bizland.partial.skills') -->
-    @include('pages.frontend.theme.bizland.partial.services')
-    <!-- @include('pages.frontend.theme.bizland.partial.portfolio') -->
-    @include('pages.frontend.theme.bizland.partial.pricing')
-    <!-- @include('pages.frontend.theme.bizland.partial.faq') -->
-    @include('pages.frontend.theme.bizland.partial.contact')
-    @include('pages.frontend.theme.bizland.partial.features')
+    @foreach($section_main as $section)
+
+    @if ($section->url == 'about')
+    @include('pages.frontend.theme.t2.partial.about')
+    @endif
+
+    @if ($section->url == 'count')
+    @include('pages.frontend.theme.t2.partial.counts')
+    @endif
+
+    @if ($section->url == 'team')
+    @include('pages.frontend.theme.t2.partial.team')
+    @endif
+
+    @if ($section->url == 'testimonial')
+    @include('pages.frontend.theme.t2.partial.testimonials')
+    @endif
+
+    @if ($section->url == 'client')
+    @include('pages.frontend.theme.t2.partial.clients')
+    @endif
+
+    @if ($section->url == 'pricing')
+    @include('pages.frontend.theme.t2.partial.pricing')
+    @endif
+
+    @if ($section->url == 'contact-us')
+    @include('pages.frontend.theme.t2.partial.contact-us')
+    @endif
+
+    @if ($section->url == 'service')
+    @include('pages.frontend.theme.t2.partial.services')
+    @endif
+
+    @endforeach
+
+    <!-- @include('pages.frontend.theme.t2.partial.skills') -->
+    <!-- @include('pages.frontend.theme.t2.partial.portfolio') -->
+    <!-- @include('pages.frontend.theme.t2.partial.faq') -->
+    <!-- @include('pages.frontend.theme.t2.partial.features') -->
   </main>
 
   <footer id="footer">
@@ -138,32 +167,28 @@
         &copy; Copyright <strong><span>{{ isset($general->name) ? $general->name : '-' }} </span></strong>. All Rights Reserved
       </div>
       <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/bizland-bootstrap-business-template/ -->
         Designed by <a href="#"> XXX </a>
       </div>
     </div>
-  </footer><!-- End Footer -->
+  </footer>
 
   <div id="preloader"></div>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="/assets/frontend/bizland/vendor/jquery/jquery.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/php-email-form/validate.js"></script>
-  <script src="/assets/frontend/bizland/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/counterup/counterup.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/venobox/venobox.min.js"></script>
-  <script src="/assets/frontend/bizland/vendor/aos/aos.js"></script>
+  <script src="/assets/frontend/t2/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/frontend/t2/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/counterup/counterup.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/venobox/venobox.min.js"></script>
+  <script src="/assets/frontend/t2/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="/assets/frontend/bizland/js/main.js"></script>
+  <script src="/assets/frontend/t2/js/main.js"></script>
 
 </body>
 

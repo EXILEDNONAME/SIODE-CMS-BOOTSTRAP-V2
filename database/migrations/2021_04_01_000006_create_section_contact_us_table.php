@@ -11,6 +11,7 @@ class CreateSectionContactUsTable extends Migration {
       $table->integer('id_theme')->unsigned();
       $table->string('name');
       $table->string('address')->nullable();
+      $table->string('maps')->nullable();
       $table->string('email')->nullable();
       $table->string('phone')->nullable();
       $table->integer('active')->default(1);

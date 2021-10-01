@@ -20,7 +20,7 @@
   @include($path . '.form', ['formMode' => 'edit'])
 </form>
 @else
-<form method="POST" id="form-exilednoname" action="{{ URL::current() }}//store" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+<form method="POST" id="form-exilednoname" action="{{ URL::current() }}/store" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
   {{ csrf_field() }}
 
   <input class="form-control" name="id_theme" type="hidden" value="2">

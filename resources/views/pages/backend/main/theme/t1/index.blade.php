@@ -1,4 +1,4 @@
-@extends('layouts.backend.system.index')
+@extends('layouts.backend.system.index_non-editable-theme-index')
 @push('title', 'Sections')
 
 @push('content-head')

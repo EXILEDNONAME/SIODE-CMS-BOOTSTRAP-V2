@@ -8,8 +8,8 @@
 <div class="form-group row">
   <label class="col-lg-3 col-form-label"> Address </label>
   <div class="col-lg-9">
-    {!! Form::text('name', (isset($data->name) ? $data->address : ''), ['class' => $errors->has('name') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
-    @error('name') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+    {!! Form::text('address', (isset($data->address) ? $data->address : ''), ['class' => $errors->has('address') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+    @error('address') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
 <div class="form-group row">
@@ -24,5 +24,12 @@
   <div class="col-lg-9">
     {!! Form::text('phone', (isset($data->phone) ? $data->phone : ''), ['class' => $errors->has('phone') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
     @error('phone') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label"> Maps </label>
+  <div class="col-lg-9">
+    {!! Form::text('maps', (isset($data->maps) ? $data->maps : ''), ['class' => $errors->has('maps') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+    @error('maps') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>

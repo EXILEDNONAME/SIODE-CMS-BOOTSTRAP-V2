@@ -19,5 +19,11 @@ class T1 extends Seeder {
 
     Theme::insert($theme);
 
+    $section = [
+      [ 'id_theme' => '1', 'name' => 'About', 'url' => 'about', 'created_at' => Carbon::now(), ],
+    ];
+
+    Section::insert($section);
+
   }
 }
