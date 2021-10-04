@@ -1,7 +1,7 @@
 <head>
   <base href="../../">
   <meta charset="utf-8">
-  <title> EXILEDNONAME | @stack('title') </title>
+  <title> {{ env('APP_NAME') }} | @stack('title') </title>
   <meta name="author" content="EXILEDNONAME">
   <meta name="description" content="Dashboard Application">
   <link rel="shortcut icon" href="/assets/backend/media/logos/favicon.ico">
