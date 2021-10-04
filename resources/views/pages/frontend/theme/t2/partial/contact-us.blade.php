@@ -37,7 +37,7 @@
     <div class="row" data-aos="fade-up" data-aos-delay="100">
 
       <div class="col-lg-6 ">
-        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb={{ $general->maps }}" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb={{ isset($general->maps) ? $general->maps : '-' }}" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
       </div>
 
       <div class="col-lg-6">
