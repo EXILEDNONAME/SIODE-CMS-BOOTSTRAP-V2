@@ -9,6 +9,7 @@ class DefaultSeeder extends Seeder {
     $this->call(T1::class);
     $this->call(T2::class);
     $this->call(T3::class);
+    $this->call(T4::class);
 
     // Default
     $this->call(Roles::class);

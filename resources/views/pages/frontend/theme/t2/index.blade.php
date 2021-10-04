@@ -8,6 +8,7 @@
   <meta content="" name="keywords">
   <link href="/assets/frontend/t2/img/favicon.png" rel="icon">
   <link href="/assets/frontend/t2/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
   <link href="/assets/frontend/t2/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/assets/frontend/t2/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="/assets/frontend/t2/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -18,6 +19,7 @@
 </head>
 
 <body>
+
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
@@ -86,7 +88,7 @@
     @endif
 
     @if ($section->url == 'client')
-    @include('pages.frontend.theme.t2.partial.clients')
+    @include('pages.frontend.theme.t2.partial.client')
     @endif
 
     @if ($section->url == 'pricing')
@@ -103,7 +105,7 @@
 
     @endforeach
 
-    <!-- @include('pages.frontend.theme.t2.partial.skills') -->
+    <!-- @include('pages.frontend.theme.t2.partial.skill') -->
     <!-- @include('pages.frontend.theme.t2.partial.portfolio') -->
     <!-- @include('pages.frontend.theme.t2.partial.faq') -->
     <!-- @include('pages.frontend.theme.t2.partial.features') -->
