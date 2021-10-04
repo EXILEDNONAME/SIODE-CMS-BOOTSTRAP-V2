@@ -7,6 +7,8 @@ Route::group([
   'namespace' => 'Backend\Main',
 ], function(){
   Route::get('/', 'ThemeController@index')->name('index');
+  Route::get('enable/{id}', 'ThemeController@enable')->name('enable');
+  Route::get('disable/{id}', 'ThemeController@disable')->name('disable');
 });
 
 // MAIN - GENERALS
