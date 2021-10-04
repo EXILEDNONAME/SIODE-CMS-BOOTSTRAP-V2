@@ -11,7 +11,7 @@ class T3 extends Seeder {
 
     $theme = [
       [
-        'name'          => 'Resi',
+        'name'          => 'Arsha',
         'active'        => '1',
         'created_at'    => Carbon::now(),
       ],
