@@ -5,16 +5,17 @@
 - STATISTICS
 - PRODUCTS
 - PAKET ABC
+- TABLE PRICING INDEX DESCRIPTION
 
 THEME 1 (OTHER)
-- Main Theme
+- Main Theme (Underconstruction)
 <hr>
 
 THEME 2 (BIZZLAND)
-- About
-- Client
+- About (FIX)
+- Client (FIX)
 - Contact Us
-- Count
+- Count (FIX)
 - Pricing
 - Service
 - Team

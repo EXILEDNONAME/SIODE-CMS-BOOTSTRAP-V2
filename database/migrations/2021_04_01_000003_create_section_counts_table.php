@@ -9,14 +9,14 @@ class CreateSectionCountsTable extends Migration {
     Schema::create('section_counts', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('id_theme')->unsigned();
-      $table->string('context_1_title')->nullable();
-      $table->string('context_2_title')->nullable();
-      $table->string('context_3_title')->nullable();
-      $table->string('context_4_title')->nullable();
-      $table->integer('context_1')->nullable();
-      $table->integer('context_2')->nullable();
-      $table->integer('context_3')->nullable();
-      $table->integer('context_4')->nullable();
+      $table->integer('count_1')->nullable();
+      $table->integer('count_2')->nullable();
+      $table->integer('count_3')->nullable();
+      $table->integer('count_4')->nullable();
+      $table->string('count_1_name')->nullable();
+      $table->string('count_2_name')->nullable();
+      $table->string('count_3_name')->nullable();
+      $table->string('count_4_name')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
       $table->integer('status')->default(1);

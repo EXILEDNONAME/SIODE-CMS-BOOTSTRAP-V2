@@ -5628,16 +5628,16 @@
         },
         {
             "name": "yajra/laravel-datatables-buttons",
-            "version": "v4.13.2",
+            "version": "v4.13.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-buttons.git",
-                "reference": "022ea8435d01a38928fd4cf75a38fae531297cc3"
+                "reference": "5c8fb97c26c14408c8933f68d86c6e4823d05740"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/022ea8435d01a38928fd4cf75a38fae531297cc3",
-                "reference": "022ea8435d01a38928fd4cf75a38fae531297cc3",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-buttons/zipball/5c8fb97c26c14408c8933f68d86c6e4823d05740",
+                "reference": "5c8fb97c26c14408c8933f68d86c6e4823d05740",
                 "shasum": ""
             },
             "require": {
@@ -5690,7 +5690,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables-buttons/issues",
-                "source": "https://github.com/yajra/laravel-datatables-buttons/tree/v4.13.2"
+                "source": "https://github.com/yajra/laravel-datatables-buttons/tree/v4.13.3"
             },
             "funding": [
                 {
@@ -5702,7 +5702,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-14T02:03:47+00:00"
+            "time": "2021-10-04T03:04:33+00:00"
         },
         {
             "name": "yajra/laravel-datatables-editor",
@@ -5843,16 +5843,16 @@
         },
         {
             "name": "yajra/laravel-datatables-html",
-            "version": "v4.39.1",
+            "version": "v4.40.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables-html.git",
-                "reference": "c461df1a49e84b9b38971c23765f5e7809e838da"
+                "reference": "ff1d37cc977dc2830500b8910428860e7e4b04f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/c461df1a49e84b9b38971c23765f5e7809e838da",
-                "reference": "c461df1a49e84b9b38971c23765f5e7809e838da",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables-html/zipball/ff1d37cc977dc2830500b8910428860e7e4b04f7",
+                "reference": "ff1d37cc977dc2830500b8910428860e7e4b04f7",
                 "shasum": ""
             },
             "require": {
@@ -5901,7 +5901,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-datatables-html/issues",
-                "source": "https://github.com/yajra/laravel-datatables-html/tree/v4.39.1"
+                "source": "https://github.com/yajra/laravel-datatables-html/tree/v4.40.0"
             },
             "funding": [
                 {
@@ -5913,7 +5913,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-09-12T12:50:52+00:00"
+            "time": "2021-10-04T08:31:21+00:00"
         },
         {
             "name": "yajra/laravel-datatables-oracle",
@@ -6417,21 +6417,21 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.14.3",
+            "version": "2.14.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "89584ce67dd32307f1063cc43846674f4679feda"
+                "reference": "f056f1fe935d9ed86e698905a957334029899895"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/89584ce67dd32307f1063cc43846674f4679feda",
-                "reference": "89584ce67dd32307f1063cc43846674f4679feda",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/f056f1fe935d9ed86e698905a957334029899895",
+                "reference": "f056f1fe935d9ed86e698905a957334029899895",
                 "shasum": ""
             },
             "require": {
                 "php": "^5.5.9 || ^7.0 || ^8.0",
-                "psr/log": "^1.0.1"
+                "psr/log": "^1.0.1 || ^2.0 || ^3.0"
             },
             "require-dev": {
                 "mockery/mockery": "^0.9 || ^1.0",
@@ -6476,7 +6476,7 @@
             ],
             "support": {
                 "issues": "https://github.com/filp/whoops/issues",
-                "source": "https://github.com/filp/whoops/tree/2.14.3"
+                "source": "https://github.com/filp/whoops/tree/2.14.4"
             },
             "funding": [
                 {
@@ -6484,7 +6484,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-09-19T12:00:00+00:00"
+            "time": "2021-10-03T12:00:00+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",

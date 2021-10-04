@@ -21,6 +21,7 @@ class T3 extends Seeder {
 
     $section = [
       [ 'id_theme' => '3', 'name' => 'About', 'url' => 'about', 'created_at' => Carbon::now(), ],
+      [ 'id_theme' => '3', 'name' => 'Contact Us', 'url' => 'contact-us', 'created_at' => Carbon::now(), ],
     ];
 
     Section::insert($section);

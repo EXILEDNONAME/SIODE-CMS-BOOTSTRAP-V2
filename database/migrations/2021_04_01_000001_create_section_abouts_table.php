@@ -9,15 +9,7 @@ class CreateSectionAboutsTable extends Migration {
     Schema::create('section_abouts', function (Blueprint $table) {
       $table->increments('id');
       $table->integer('id_theme')->unsigned();
-      $table->string('title')->nullable();
-      $table->string('sub_title')->nullable();
-      $table->string('content_title')->nullable();
-      $table->text('content_description_1')->nullable();
-      $table->string('content_1_title')->nullable();
-      $table->string('content_1_description')->nullable();
-      $table->string('content_2_title')->nullable();
-      $table->string('content_2_description')->nullable();
-      $table->text('content_description_2')->nullable();
+      $table->text('description')->nullable();
       $table->integer('active')->default(1);
       $table->integer('sort')->default(1);
       $table->integer('status')->default(1);
