@@ -1,5 +1,5 @@
 @extends('layouts.backend.system.section-custom')
-@push('title', 'Section Contact Us')
+@push('title', 'Configuration Generals')
 
 @push('content-body')
 

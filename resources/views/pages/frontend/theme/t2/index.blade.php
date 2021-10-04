@@ -173,6 +173,7 @@
   </footer>
 
   <div id="preloader"></div>
+  <a href="#" class="whatsapp"><i class="icofont-simple-up"></i></a>
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->

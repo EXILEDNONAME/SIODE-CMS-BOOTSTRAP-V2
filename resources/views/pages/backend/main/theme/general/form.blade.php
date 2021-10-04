@@ -26,3 +26,32 @@
     @error('phone') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
   </div>
 </div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label"> Twitter </label>
+  <div class="col-lg-9">
+    {!! Form::text('social_twitter', (isset($data->social_twitter) ? $data->social_twitter : ''), ['class' => $errors->has('social_twitter') ? 'form-control is-invalid' : 'form-control']) !!}
+    @error('social_twitter') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label"> Facebook </label>
+  <div class="col-lg-9">
+    {!! Form::text('social_facebook', (isset($data->social_facebook) ? $data->social_facebook : ''), ['class' => $errors->has('social_facebook') ? 'form-control is-invalid' : 'form-control']) !!}
+    @error('social_facebook') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label"> Instagram </label>
+  <div class="col-lg-9">
+    {!! Form::text('social_instagram', (isset($data->social_instagram) ? $data->social_instagram : ''), ['class' => $errors->has('social_instagram') ? 'form-control is-invalid' : 'form-control']) !!}
+    @error('social_instagram') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>
+<div class="form-group row">
+  <label class="col-lg-3 col-form-label"> Maps </label>
+  <div class="col-lg-9">
+    {!! Form::text('maps', (isset($data->maps) ? $data->maps : ''), ['class' => $errors->has('maps') ? 'form-control is-invalid' : 'form-control']) !!}
+    <span class="form-text text-muted"> Please enter google maps pb code </span>
+    @error('maps') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>

@@ -37,8 +37,7 @@
     <div class="row" data-aos="fade-up" data-aos-delay="100">
 
       <div class="col-lg-6 ">
-        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3960.9856549926344!2d107.6082253!3d-6.8923187!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd5c22f21fa2e77b2!2sFakultas%20Seni%20Rupa%20dan%20Desain%20ITB!5e0!3m2!1sen!2sid!4v1632970655320!5m2!1sen!2sid" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
-        <!-- <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe> -->
+        <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb={{ $general->maps }}" frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
       </div>
 
       <div class="col-lg-6">

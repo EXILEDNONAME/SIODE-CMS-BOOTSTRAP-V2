@@ -13,6 +13,7 @@ class CreateGeneralsTable extends Migration {
       $table->string('address')->nullable();
       $table->string('email')->nullable();
       $table->string('phone')->nullable();
+      $table->text('maps')->nullable();
       $table->string('social_twitter')->nullable();
       $table->string('social_facebook')->nullable();
       $table->string('social_instagram')->nullable();
