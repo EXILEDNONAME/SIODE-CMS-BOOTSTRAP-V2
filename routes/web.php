@@ -4,6 +4,7 @@ Auth::routes();
 
 Route::get('/', 'Frontend\GlobalController@index')->name('frontend.index');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::view('/radio', 'pages.frontend.radio');
 
 
 Route::get('/dashboard', 'Backend\DashboardController@index')->name('dashboard.index');
