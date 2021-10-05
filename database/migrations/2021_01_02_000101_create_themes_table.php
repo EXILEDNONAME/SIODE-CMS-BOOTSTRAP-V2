@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 class CreateThemesTable extends Migration {
   public function up() {
     Schema::create('themes', function (Blueprint $table) {
-      $table->increments('id');
+      $table->increments('id')->nullable();
       $table->string('name');
       $table->text('description')->nullable();
       $table->integer('active')->default(1);

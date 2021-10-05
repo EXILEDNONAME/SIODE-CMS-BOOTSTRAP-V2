@@ -11,6 +11,7 @@ class T2 extends Seeder {
 
     $theme = [
       [
+        'id'            => '2',
         'name'          => 'Bizland',
         'active'        => '1',
         'created_at'    => Carbon::now(),
@@ -24,7 +25,6 @@ class T2 extends Seeder {
       [ 'id_theme' => '2', 'name' => 'Client', 'url' => 'client', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Contact Us ', 'url' => 'contact-us', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Count', 'url' => 'count', 'created_at' => Carbon::now(), ],
-      [ 'id_theme' => '2', 'name' => 'General', 'url' => 'general', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Pricing', 'url' => 'pricing', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Service', 'url' => 'service', 'created_at' => Carbon::now(), ],
       [ 'id_theme' => '2', 'name' => 'Team', 'url' => 'team', 'created_at' => Carbon::now(), ],

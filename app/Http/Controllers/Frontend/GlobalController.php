@@ -49,7 +49,7 @@ class GlobalController extends Controller {
 
     if (!empty($theme->id) && $theme->id == 2 ) {
       $general = $this->general::first();
-      $section_main = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
+      $section_main = $this->section::where(['id_theme' => 2, 'active' => 1])->orderBy('sort', 'asc')->get();
       $section_menu = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
       $about = $this->modelSectionAbout::first();
       $client = $this->modelSectionClient::where('active', 1)->get();

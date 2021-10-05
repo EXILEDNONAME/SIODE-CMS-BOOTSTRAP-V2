@@ -7,15 +7,20 @@
 
         @foreach($section_menu as $section)
         @if ($section->url == 'about') <li><a href="#about"> About </a></li> @endif
-        @if ($section->url == 'count') <li><a href="#count"> Counts </a></li> @endif
         @if ($section->url == 'team') <li><a href="#team"> Team </a></li> @endif
         @if ($section->url == 'client') <li><a href="#clients"> Clients </a></li> @endif
-        @if ($section->url == 'testimonial') <li><a href="#testimonials"> Testimonials </a></li> @endif
+        @if ($section->url == 'testimonial') <li><a href="#testimonial"> Testimonials </a></li> @endif
         @if ($section->url == 'service') <li><a href="#services">Services</a></li> @endif
         @if ($section->url == 'pricing') <li><a href="#pricing">Pricing</a></li> @endif
         @if ($section->url == 'feature') <li><a href="#features">Features</a></li> @endif
         @endforeach
 
+        <li class="drop-down"><a href=""> EN </a>
+          <ul>
+            <li><a href="#"> ID </a></li>
+            <li><a href="#"> EN </a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </div>

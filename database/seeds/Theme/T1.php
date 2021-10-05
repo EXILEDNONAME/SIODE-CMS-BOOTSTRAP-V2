@@ -11,6 +11,7 @@ class T1 extends Seeder {
 
     $theme = [
       [
+        'id'            => '1',
         'name'          => 'Other',
         'active'        => '1',
         'created_at'    => Carbon::now(),

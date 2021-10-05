@@ -3,10 +3,10 @@
 
     <div class="section-title">
       <h2> Clients </h2>
+      <h3> Check Our <span> Clients </span></h3>
     </div>
 
-    @if ($client->count() == 0 )
-    <center> .......... </center>
+    @if ( $client->count() == 0 ) <center> .......... </center>
     @else
     <div class="row">
       @foreach($client as $client)

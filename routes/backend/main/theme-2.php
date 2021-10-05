@@ -6,6 +6,7 @@ Route::group([
   'prefix' => 'dashboard/themes-2',
   'namespace' => 'Backend\Main\Theme',
 ], function(){
+  Route::post('sort-update/{id}', 'T2Controller@sort_update')->name('enable');
   Route::get('enable/{id}', 'T2Controller@enable')->name('enable');
   Route::get('disable/{id}', 'T2Controller@disable')->name('disable');
   Route::get('/', 'T2Controller@index')->name('index');

@@ -3,11 +3,10 @@
 
     <div class="section-title">
       <h2>Pricing</h2>
-      <h3>Check our <span>Pricing</span></h3>
-      <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+      <h3>Check Our <span>Pricing</span></h3>
     </div>
 
-    @if ($pricing->count() == 0) <center> Pricing not found ... </center>
+    @if ($pricing->count() == 0) <center> .......... </center>
     @elseif ($pricing->count() == 1)
     <div class="row">
       <div class="col-lg-4 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="200"></div>

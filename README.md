@@ -6,20 +6,21 @@
 - PRODUCTS
 - PAKET ABC
 - TABLE PRICING INDEX DESCRIPTION
+- PAGE SORT MENU
 
 THEME 1 (OTHER)
 - Main Theme (Underconstruction)
 <hr>
 
 THEME 2 (BIZZLAND)
-- About (FIX)
-- Client (FIX)
-- Contact Us
-- Count (FIX)
-- Pricing
-- Service
-- Team
-- Testimonial
+- FIX - About
+- FIX - Client
+- FIX - Contact Us
+- FIX - Count
+- FIX - Pricing
+- FIX - Service
+- FIX - Team
+- FIX - Testimonial
 <hr>
 
 THEME 3 (ARSHA)

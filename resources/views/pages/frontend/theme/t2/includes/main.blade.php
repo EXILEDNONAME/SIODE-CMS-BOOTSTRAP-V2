@@ -1,12 +1,12 @@
 <main id="main">
   @foreach($section_main as $section)
 
-  @if ($section->url == 'about')
-  @include('pages.frontend.theme.t2.partial.about')
-  @endif
-
   @if ($section->url == 'count')
   @include('pages.frontend.theme.t2.partial.count')
+  @endif
+
+  @if ($section->url == 'about')
+  @include('pages.frontend.theme.t2.partial.about')
   @endif
 
   @if ($section->url == 'team')
@@ -14,7 +14,7 @@
   @endif
 
   @if ($section->url == 'testimonial')
-  @include('pages.frontend.theme.t2.partial.testimonials')
+  @include('pages.frontend.theme.t2.partial.testimonial')
   @endif
 
   @if ($section->url == 'client')
@@ -30,7 +30,7 @@
   @endif
 
   @if ($section->url == 'service')
-  @include('pages.frontend.theme.t2.partial.services')
+  @include('pages.frontend.theme.t2.partial.service')
   @endif
 
   @endforeach

@@ -4,12 +4,11 @@
     <div class="section-title">
       <h2>Team</h2>
       <h3>Our Hardworking <span>Team</span></h3>
-      <p> We're smart, we're hard working, we're easy to talk to, and we're love a challenge.</p>
     </div>
 
-    @if ($team->count() == 0 ) <center> Teams not found ... </center>
-    @elseif ($team->count() == 1 )
-    @foreach($team as $team)
+    @if ( $team->count() == 0 ) <center> .......... </center>
+    @elseif ( $team->count() == 1 )
+    @foreach( $team as $team )
     <div class="row">
       <div class="col-lg-4 col-md-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200"></div>
       <div class="col-lg-4 col-md-12 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">

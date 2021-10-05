@@ -44,7 +44,9 @@ class T1Controller extends Controller {
       ->addIndexColumn()
       ->make(true);
     }
-    return view($this->path . '.index', compact('model'));
+
+    $data = $this->model::where('id_theme', 2)->get();
+    return view($this->path . '.index', compact('data', 'model'));
   }
 
   /**

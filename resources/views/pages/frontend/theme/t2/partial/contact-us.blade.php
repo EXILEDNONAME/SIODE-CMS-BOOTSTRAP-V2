@@ -2,9 +2,9 @@
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
-      <h2>Contact</h2>
-      <h3><span>Contact Us</span></h3>
-      <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+      <h2>Contact Us</h2>
+      <h3> How can we help <span>you?</span></h3>
+
     </div>
 
     <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -12,7 +12,7 @@
         <div class="info-box mb-4">
           <i class="bx bx-map"></i>
           <h3> Our Address </h3>
-          <p> {{ isset($contactus->address) ? $contactus->address : '-' }} </p>
+          <p> {{ isset($contactus->address) ? $contactus->address : '' }} </p>
         </div>
       </div>
 
@@ -20,7 +20,7 @@
         <div class="info-box  mb-4">
           <i class="bx bx-envelope"></i>
           <h3> Email Us</h3>
-          <p> {{ isset($contactus->email) ? $contactus->email : '-' }} </p>
+          <p> {{ isset($contactus->email) ? $contactus->email : '' }} </p>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
         <div class="info-box  mb-4">
           <i class="bx bx-phone-call"></i>
           <h3> Call Us </h3>
-          <p> {{ isset($contactus->phone) ? $contactus->phone : '-' }} </p>
+          <p> {{ isset($contactus->phone) ? $contactus->phone : '' }} </p>
         </div>
       </div>
 

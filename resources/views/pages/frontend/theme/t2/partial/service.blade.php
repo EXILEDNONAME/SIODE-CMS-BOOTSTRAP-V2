@@ -1,15 +1,14 @@
-<section id="services" class="services">
+<section id="service" class="services">
   <div class="container" data-aos="fade-up">
 
     <div class="section-title">
       <h2>Services</h2>
       <h3>Check our <span>Services</span></h3>
-      <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
     </div>
 
-    @if ($service->count() == 0) <center> Services not found ... </center>
-    @elseif ($service->count() == 1)
-    @foreach($service as $services)
+    @if ( $service->count() == 0 ) <center> .......... </center>
+    @elseif ( $service->count() == 1 )
+    @foreach( $service as $services )
     <div class="row">
       <div class="col-lg-4 col-md-12 align-items-stretch mb-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200"></div>
       <div class="col-lg-4 col-md-12 align-items-stretch mb-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">

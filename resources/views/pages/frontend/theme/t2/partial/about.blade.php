@@ -3,6 +3,8 @@
     <div class="section-title">
       <h2>About</h2>
     </div>
-    {!! isset($about->description) ? $about->description : '..........' !!}
+    @if (!empty($about->description))  {{ $about->description }}
+    @else <center> .......... </center>
+    @endif
   </div>
 </section>

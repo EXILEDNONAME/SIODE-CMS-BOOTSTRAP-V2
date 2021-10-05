@@ -76,6 +76,7 @@
                 <th class="no-export"> </th>
                 <th> No. </th>
                 @stack('content-head')
+                <th> Sort </th>
                 <th> Active </th>
                 <th> </th>
               </tr>
@@ -86,6 +87,34 @@
     </div>
   </div>
 </div>
+
+<!-- MODAL -->
+@foreach($data as $data)
+<div class="modal fade" id="modalUpdate{{$data->id }}" tabindex="-1" aria-labelledby="modalUpdate" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Update Sort</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!--FORM UPDATE BARANG-->
+        <form method="post" action="{{ URL::current() }}/sort-update/{{ $data->id }}" method="post">
+          @csrf
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="sort" name="sort" value="{{ isset($data->sort) ? $data->sort : '0' }}" required>
+          </div>
+          <button type="submit" class="btn btn-primary"> Save </button>
+        </form>
+        <!--END FORM UPDATE BARANG-->
+      </div>
+    </div>
+  </div>
+</div>
+@endforeach
 
 @include('includes.activities')
 @endpush
@@ -211,6 +240,12 @@ var KTDatatablesExtensionsKeytable = function() {
           }
         },
         @stack('content-body')
+        {
+          data: 'sort', orderable: true, 'className': 'align-middle text-center', 'width': '1',
+          render: function ( data, type, row ) {
+            return '<a href="{{ URL::current() }}#"><span data-toggle="modal" data-target="#modalUpdate' + row.id + '" data-id="' + row.id + '">' + row.sort +'</span></a>';
+          }
+        },
         {
           data: 'active', orderable: true, 'className': 'align-middle text-center', 'width': '1',
           render: function ( data, type, row ) {

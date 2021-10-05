@@ -23,7 +23,8 @@ class T2Controller extends Controller {
     $this->url = '/dashboard/themes-2';
     $this->path = 'pages.backend.main.theme.t2';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::where('id_theme', 2)->get();
+    $this->data = $this->model::where('id_theme', 2)->orderBy('sort', 'asc')->get();
+    $this->section = 'App\Models\Backend\Main\Section';
   }
 
   /**
@@ -41,13 +42,16 @@ class T2Controller extends Controller {
       ->addIndexColumn()
       ->make(true);
     }
-    return view($this->path . '.index', compact('model'));
+
+    $data = $this->model::where('id_theme', 2)->get();
+    return view($this->path . '.index', compact('data', 'model'));
   }
 
   /**
   **************************************************
   * @return Enable
   * @return Disable
+  * @return Sort-Update
   **************************************************
   **/
 
@@ -59,6 +63,11 @@ class T2Controller extends Controller {
   public function disable($id) {
     $data = $this->model::where('id', $id)->update([ 'active' => 2 ]);
     return Response::json($data);
+  }
+
+  public function sort_update(Request $request, $id) {
+    $data = $this->model::where('id', $id)->update([ 'sort' => $request->sort ]);
+    return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
 }

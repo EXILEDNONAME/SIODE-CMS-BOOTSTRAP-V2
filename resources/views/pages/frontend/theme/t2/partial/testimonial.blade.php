@@ -1,9 +1,9 @@
-<section id="testimonials" class="testimonials">
+<section id="testimonial" class="testimonials">
   <div class="container" data-aos="zoom-in">
     <div class="owl-carousel testimonials-carousel">
 
       <div class="testimonial-item text-muted">
-        Testimonials not found ...
+        
       </div>
 
       @foreach($testimonial as $testimonial)
