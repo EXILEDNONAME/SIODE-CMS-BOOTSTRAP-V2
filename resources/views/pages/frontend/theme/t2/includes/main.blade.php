@@ -9,14 +9,6 @@
   @include('pages.frontend.theme.t2.partial.about')
   @endif
 
-  @if ($section->url == 'team')
-  @include('pages.frontend.theme.t2.partial.team')
-  @endif
-
-  @if ($section->url == 'testimonial')
-  @include('pages.frontend.theme.t2.partial.testimonial')
-  @endif
-
   @if ($section->url == 'client')
   @include('pages.frontend.theme.t2.partial.client')
   @endif
@@ -25,12 +17,20 @@
   @include('pages.frontend.theme.t2.partial.pricing')
   @endif
 
-  @if ($section->url == 'contact-us')
-  @include('pages.frontend.theme.t2.partial.contact-us')
-  @endif
-
   @if ($section->url == 'service')
   @include('pages.frontend.theme.t2.partial.service')
+  @endif
+
+  @if ($section->url == 'team')
+  @include('pages.frontend.theme.t2.partial.team')
+  @endif
+
+  @if ($section->url == 'testimonial')
+  @include('pages.frontend.theme.t2.partial.testimonial')
+  @endif
+
+  @if ($section->url == 'contact-us')
+  @include('pages.frontend.theme.t2.partial.contact-us')
   @endif
 
   @endforeach

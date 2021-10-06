@@ -74,8 +74,21 @@ class ClientController extends Controller {
   **/
 
   public function store(Request $request) {
-    $store = $request->all();
-    $this->model::create($store);
+    $file = $request->file('image');
+    $file_name = time()."_".$file->getClientOriginalName();
+    $target_upload = base_path('public/files/client');
+    $file->move($target_upload, $file_name);
+
+    $this->model::create([
+      'id_theme' => $request->id_theme,
+      'name' => $request->name,
+      'description' => $request->description,
+      'image' => $file_name,
+      'sort' => $request->sort,
+      'created_by' => $request->created_by,
+      'updated_by' => $request->updated_by,
+    ]);
+
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
   }
 
@@ -99,9 +112,21 @@ class ClientController extends Controller {
   **/
 
   public function update(Request $request, $id) {
-    $data = $this->model::findOrFail($id);
-    $update = $request->all();
-    $data->update($update);
+
+    $file = $request->file('image');
+    $file_name = time()."_".$file->getClientOriginalName();
+    $target_upload = base_path('public/files/client');
+    $file->move($target_upload, $file_name);
+
+    $this->model::where('id', $id)->update([
+      'id_theme' => $request->id_theme,
+      'name' => $request->name,
+      'description' => $request->description,
+      'image' => $file_name,
+      'sort' => $request->sort,
+      'updated_by' => $request->updated_by,
+    ]);
+
     return redirect($this->url)->with('success', trans('default.notification.success.item-updated'));
   }
 

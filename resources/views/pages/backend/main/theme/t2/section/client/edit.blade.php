@@ -6,6 +6,7 @@
   {{ method_field('PATCH') }}
   {{ csrf_field() }}
 
+  <input class="form-control" name="id_theme" type="hidden" value="2">
   <input class="form-control" name="id" type="hidden" value="{{ $data->id }}">
   <input class="form-control" name="updated_by" type="hidden" value="{{ Auth::User()->id }}">
   @include($path . '.form', ['formMode' => 'edit', 'status' => 'true'])

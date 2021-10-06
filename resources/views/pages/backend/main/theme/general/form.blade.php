@@ -6,6 +6,13 @@
   </div>
 </div>
 <div class="form-group row">
+  <label class="col-lg-3 col-form-label"> Slogan </label>
+  <div class="col-lg-9">
+    {!! Form::text('slogan', (isset($data->slogan) ? $data->slogan : ''), ['class' => $errors->has('slogan') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}
+    @error('slogan') <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span> @enderror
+  </div>
+</div>
+<div class="form-group row">
   <label class="col-lg-3 col-form-label"> Address </label>
   <div class="col-lg-9">
     {!! Form::text('address', (isset($data->address) ? $data->address : ''), ['class' => $errors->has('address') ? 'form-control is-invalid' : 'form-control', 'required' => 'required']) !!}

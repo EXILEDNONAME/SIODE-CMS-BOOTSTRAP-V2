@@ -23,7 +23,7 @@ class T3Controller extends Controller {
     $this->url = '/dashboard/themes-3';
     $this->path = 'pages.backend.main.theme.t3';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::where('id_theme', 3)->get();
+    $this->data = $this->model::where('id_theme', 3)->orderBy('active', 'asc')->orderBy('sort', 'asc')->get();
   }
 
   /**
@@ -41,7 +41,7 @@ class T3Controller extends Controller {
       ->addIndexColumn()
       ->make(true);
     }
-    
+
     $data = $this->model::where('id_theme', 2)->get();
     return view($this->path . '.index', compact('data', 'model'));
   }

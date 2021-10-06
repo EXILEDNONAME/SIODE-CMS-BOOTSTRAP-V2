@@ -23,7 +23,7 @@ class T2Controller extends Controller {
     $this->url = '/dashboard/themes-2';
     $this->path = 'pages.backend.main.theme.t2';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::where('id_theme', 2)->orderBy('sort', 'asc')->get();
+    $this->data = $this->model::where('id_theme', 2)->orderBy('active', 'asc')->orderBy('sort', 'asc')->get();
     $this->section = 'App\Models\Backend\Main\Section';
   }
 

@@ -71,6 +71,7 @@ return [
     ],
     'error'   => [
       'restrict'   => 'Access Restrictions',
+      'no-configuration'  => 'Configuration Not Found',
     ]
   ]
 

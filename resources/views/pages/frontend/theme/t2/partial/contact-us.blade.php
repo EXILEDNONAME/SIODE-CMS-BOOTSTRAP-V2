@@ -12,7 +12,7 @@
         <div class="info-box mb-4">
           <i class="bx bx-map"></i>
           <h3> Our Address </h3>
-          <p> {{ isset($contactus->address) ? $contactus->address : '' }} </p>
+          <p> {{ isset($general->address) ? $general->address : '' }} </p>
         </div>
       </div>
 
@@ -20,7 +20,7 @@
         <div class="info-box  mb-4">
           <i class="bx bx-envelope"></i>
           <h3> Email Us</h3>
-          <p> {{ isset($contactus->email) ? $contactus->email : '' }} </p>
+          <p> {{ isset($general->email) ? $general->email : '' }} </p>
         </div>
       </div>
 
@@ -28,7 +28,7 @@
         <div class="info-box  mb-4">
           <i class="bx bx-phone-call"></i>
           <h3> Call Us </h3>
-          <p> {{ isset($contactus->phone) ? $contactus->phone : '' }} </p>
+          <p> {{ isset($general->phone) ? $general->phone : '' }} </p>
         </div>
       </div>
 

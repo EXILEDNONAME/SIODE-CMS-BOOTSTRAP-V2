@@ -35,7 +35,7 @@ class ContactUsController extends Controller {
   public function index() {
     $data = $this->model::first();
     $path = $this->path;
-    return view($this->path . '.index', compact('data', 'path'));
+    return redirect($this->url . '/..')->with('error', trans('default.notification.error.no-configuration'));
   }
 
   public function store(Request $request) {
