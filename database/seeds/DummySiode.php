@@ -5,6 +5,7 @@ use Carbon\Carbon as Carbon;
 use App\Models\Backend\Main\General;
 use App\Models\Backend\Main\SectionAbout;
 use App\Models\Backend\Main\SectionClient;
+use App\Models\Backend\Main\SectionCount;
 
 class DummySiode extends Seeder {
 
@@ -82,7 +83,25 @@ class DummySiode extends Seeder {
 
     SectionClient::insert($client);
 
+    // COUNT
+    $count = [
+      [
+        'id_theme'      => '2',
+        'count_1'       => '90',
+        'count_1_name'  => 'Happy Client',
+        'count_2'       => '2',
+        'count_2_name'  => 'Suggest',
+        'count_3'       => '10',
+        'count_3_name'  => 'Team Support',
+        'count_4'       => '100',
+        'count_4_name'  => 'Member',
+        'active'        => '1',
+        'sort'          => '1',
+        'created_at'    => Carbon::now(),
+      ],
+    ];
 
+    SectionCount::insert($count);
 
   }
 }
