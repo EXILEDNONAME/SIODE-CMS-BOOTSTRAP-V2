@@ -34,7 +34,7 @@ class T2Controller extends Controller {
   **/
 
   public function index() {
-    $model = $this->model;
+    $model = $this->model::where('id_theme', 2)->first();
     if(request()->ajax()) {
       return DataTables::of($this->data)
       ->editColumn('id_themes', function($order) { return $order->themes->name; })

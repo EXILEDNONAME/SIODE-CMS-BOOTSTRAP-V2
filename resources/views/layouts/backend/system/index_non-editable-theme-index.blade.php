@@ -116,7 +116,6 @@
 </div>
 @endforeach
 
-@include('includes.activities')
 @endpush
 
 @push('js')

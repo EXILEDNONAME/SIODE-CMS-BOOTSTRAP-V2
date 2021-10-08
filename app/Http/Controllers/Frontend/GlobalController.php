@@ -46,19 +46,19 @@ class GlobalController extends Controller {
   public function index() {
 
     $theme = $this->theme::where('active', 1)->first();
+    $about = $this->modelSectionAbout::first();
+    $contactus = $this->modelSectionContactUs::first();
+    $team = $this->modelSectionTeam::where('active', 1)->get();
 
     if (!empty($theme->id) && $theme->id == 2 ) {
       $general = $this->general::first();
       $section_main = $this->section::where(['id_theme' => 2, 'active' => 1])->orderBy('sort', 'asc')->get();
       $section_menu = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
-      $about = $this->modelSectionAbout::first();
       $client = $this->modelSectionClient::where('active', 1)->get();
       $count = $this->modelSectionCount::first();
       $pricing = $this->modelSectionPricing::where('active', 1)->get();
       $service = $this->modelSectionService::where('active', 1)->get();
-      $team = $this->modelSectionTeam::where('active', 1)->get();
       $testimonial = $this->modelSectionTestimonial::get();
-      $contactus = $this->modelSectionContactUs::first();
       return view($this->path . '.theme.t2.index', compact('section_main', 'section_menu', 'general', 'about', 'client', 'count', 'pricing', 'service', 'team', 'testimonial', 'contactus'))->render();
     }
 
@@ -66,7 +66,7 @@ class GlobalController extends Controller {
       $general = $this->general::first();
       $section_main = $this->section::where(['id_theme' => 3, 'active' => 1])->get();
       $section_menu = $this->section::where(['id_theme' => 3, 'active' => 1])->get();
-      return view($this->path . '.theme.t3.index', compact('section_main', 'section_menu', 'general'))->render();
+      return view($this->path . '.theme.t3.index', compact('section_main', 'section_menu', 'general', 'about', 'contactus', 'team'))->render();
     }
 
     else if (!empty($theme->id) && $theme->id == 4 ) {
