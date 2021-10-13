@@ -8,7 +8,6 @@ class CreateSectionCountsTable extends Migration {
   public function up() {
     Schema::create('section_counts', function (Blueprint $table) {
       $table->increments('id');
-      $table->integer('id_theme')->unsigned();
       $table->integer('count_1')->nullable();
       $table->integer('count_2')->nullable();
       $table->integer('count_3')->nullable();
@@ -22,7 +21,6 @@ class CreateSectionCountsTable extends Migration {
       $table->integer('status')->default(1);
       $table->integer('created_by')->nullable()->default('0');
       $table->integer('updated_by')->nullable()->default('0');
-      $table->foreign('id_theme')->references('id')->on('themes')->onDelete('restrict')->onUpdate('restrict');
       $table->timestamps();
     });
   }

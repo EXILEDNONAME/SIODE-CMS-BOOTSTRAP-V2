@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Main;
+namespace App\Http\Controllers\Backend\Main\Section;
 
 use Auth;
 use DataTables;
@@ -9,10 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Spatie\Activitylog\Models\Activity;
 
-use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
-use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
-
-class SectionController extends Controller {
+class TestimonialController extends Controller {
 
   /**
   **************************************************
@@ -22,13 +19,11 @@ class SectionController extends Controller {
   **/
 
   public function __construct() {
-
     $this->middleware('auth');
-    $this->url = '/dashboard/sections';
-    $this->path = 'pages.backend.main';
-    $this->model = 'App\Models\Backend\Main\Section';
+    $this->url = '/dashboard/sections/testimonial';
+    $this->path = 'pages.backend.main.section.testimonial';
+    $this->model = 'App\Models\Backend\Main\SectionTestimonial';
     $this->data = $this->model::get();
-
   }
 
   /**
@@ -45,7 +40,7 @@ class SectionController extends Controller {
       ->addIndexColumn()
       ->make(true);
     }
-    return view($this->path . '.section.index', compact('model'));
+    return view($this->path . '.index', compact('model'));
   }
 
   /**
@@ -78,7 +73,7 @@ class SectionController extends Controller {
   **************************************************
   **/
 
-  public function store(StoreRequest $request) {
+  public function store(Request $request) {
     $store = $request->all();
     $this->model::create($store);
     return redirect($this->url)->with('success', trans('default.notification.success.item-created'));
@@ -91,10 +86,10 @@ class SectionController extends Controller {
   **/
 
   public function edit($id) {
-    $path = $this->path . '.theme-2.section.about';
+    $path = $this->path;
     $model = $this->model;
     $data = $this->model::findOrFail($id);
-    return view($this->path . '.theme-2.section.about.index', compact('path', 'data', 'model'));
+    return view($this->path . '.edit', compact('path', 'data', 'model'));
   }
 
   /**
@@ -103,7 +98,7 @@ class SectionController extends Controller {
   **************************************************
   **/
 
-  public function update(UpdateRequest $request, $id) {
+  public function update(Request $request, $id) {
     $data = $this->model::findOrFail($id);
     $update = $request->all();
     $data->update($update);

@@ -5,11 +5,11 @@ namespace App\Models\Backend\Main;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
-class SectionContactUs extends Model {
+class SectionContact extends Model {
 
   use LogsActivity;
 
-  protected $table = 'section_contact_us';
+  protected $table = 'section_contacts';
   protected $primaryKey = 'id';
   protected $guarded = ['id'];
 
