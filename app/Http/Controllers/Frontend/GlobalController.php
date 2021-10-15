@@ -33,7 +33,7 @@ class GlobalController extends Controller {
     $this->modelSectionService = 'App\Models\Backend\Main\SectionService';
     $this->modelSectionTeam = 'App\Models\Backend\Main\SectionTeam';
     $this->modelSectionTestimonial = 'App\Models\Backend\Main\SectionTestimonial';
-    $this->modelSectionContactUs = 'App\Models\Backend\Main\SectionContactUs';
+    $this->modelSectionContact = 'App\Models\Backend\Main\SectionContact';
     $this->modelSectionFeature = 'App\Models\Backend\Main\SectionFeature';
   }
 
@@ -47,13 +47,13 @@ class GlobalController extends Controller {
 
     $theme = $this->theme::where('active', 1)->first();
     $about = $this->modelSectionAbout::first();
-    $contactus = $this->modelSectionContactUs::first();
+    $contactus = $this->modelSectionContact::first();
     $team = $this->modelSectionTeam::where('active', 1)->get();
 
     if (!empty($theme->id) && $theme->id == 2 ) {
       $general = $this->general::first();
-      $section_main = $this->section::where(['id_theme' => 2, 'active' => 1])->orderBy('sort', 'asc')->get();
-      $section_menu = $this->section::where(['id_theme' => 2, 'active' => 1])->get();
+      $section_main = $this->section::where(['active' => 1])->orderBy('sort', 'asc')->get();
+      $section_menu = $this->section::where(['active' => 1])->get();
       $client = $this->modelSectionClient::where('active', 1)->get();
       $count = $this->modelSectionCount::first();
       $pricing = $this->modelSectionPricing::where('active', 1)->get();
