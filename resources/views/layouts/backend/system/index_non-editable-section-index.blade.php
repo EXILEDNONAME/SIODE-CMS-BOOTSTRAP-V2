@@ -87,7 +87,7 @@
 
               <div class="col-md-2 my-2 my-md-0">
                 <div class="d-flex align-items-center">
-                  {!! Form::select(NULL, filter_themes(), NULL, ['data-column' => 2, 'placeholder' => '- Filter Theme -', 'class' => 'form-control filter-theme']) !!}
+                  {!! Form::select('id_theme', filter_themes(), $data->name, ['data-column' => 2, 'placeholder' => '- Filter Theme -', 'class' => 'form-control filter-theme']) !!}
                 </div>
               </div>
 

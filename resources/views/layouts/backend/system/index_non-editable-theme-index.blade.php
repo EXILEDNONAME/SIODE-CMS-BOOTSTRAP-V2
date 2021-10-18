@@ -256,7 +256,7 @@ var KTDatatablesExtensionsKeytable = function() {
         {
           data: 'action', orderable: false, orderable: false, searchable: false, 'width': '1',
           render : function ( data, type, row) {
-            return '<a href="{{ URL::Current() }}/' + row.url + '" class="navi-link"><span class="navi-icon"><i class="fas fa-wrench"></i></span></a>';
+            return '<a href="{{ URL::Current() }}/../sections" class="navi-link"><span class="navi-icon"><i class="fas fa-wrench"></i></span></a>';
           },
         },
       ],

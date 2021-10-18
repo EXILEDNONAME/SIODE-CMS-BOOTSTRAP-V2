@@ -11,6 +11,7 @@ use Spatie\Activitylog\Models\Activity;
 
 use App\Http\Requests\Backend\System\Dummy\Table\General\StoreRequest;
 use App\Http\Requests\Backend\System\Dummy\Table\General\UpdateRequest;
+use App\Models\Backend\Main\Theme;
 
 class SectionController extends Controller {
 
@@ -27,8 +28,7 @@ class SectionController extends Controller {
     $this->url = '/dashboard/sections';
     $this->path = 'pages.backend.main';
     $this->model = 'App\Models\Backend\Main\Section';
-    $this->data = $this->model::get();
-
+    $this->data = $this->model::orderby('id_theme', 'asc')->get();
   }
 
   /**
@@ -39,13 +39,15 @@ class SectionController extends Controller {
 
   public function index() {
     $model = $this->model;
+    $data = Theme::where('active', 1)->first();
     if(request()->ajax()) {
       return DataTables::of($this->data)
+      ->editColumn('id_themes', function($order) { return $order->themes->name; })
       ->rawColumns(['description'])
       ->addIndexColumn()
       ->make(true);
     }
-    return view($this->path . '.section.index', compact('model'));
+    return view($this->path . '.section.index', compact('data', 'model'));
   }
 
   /**
